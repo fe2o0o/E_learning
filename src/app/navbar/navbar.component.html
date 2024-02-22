@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-xl py-3 bg-main">
+  <div class="container">
+    <a class="navbar-brand roboto-black fs-3  text-white" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto justify-content-between me-5  mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="courses" >Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">About</a>
+        </li>
+      </ul>
+      <div *ngIf="!isLogin" class="bottons d-flex justify-content-between">
+        <button (click)="handleLogin()" routerLink="auth" class="btn btn-light rounded-pill px-5 py-2 fw-bolder ">Login</button>
+        <button (click)="handleRegister()" routerLink="auth" class="btn rounded-pill px-5 py-2 fw-bolder signup text-white">Sign Up</button>
+      </div>
+      <button *ngIf="isLogin" (click)="LogOut()" class="btn btn-danger rounded-pill py-1 px-4 fs-6 fw-bold">Log Out</button>
+    </div>
+  </div>
+</nav>

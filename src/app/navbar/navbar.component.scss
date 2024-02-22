@@ -1,0 +1,36 @@
+.navbar-nav {
+  width: 45% !important;
+}
+
+
+.navbar-brand{
+  width:10%;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+}
+
+
+
+.bottons
+{
+  width: 28%;
+}
+
+@media screen and (max-width:992px) {
+  .navbar-nav {
+    width: 100% !important;
+  }
+    .bottons {
+      width: 100%;
+      display: block !important;
+      button{
+        margin-right: 25px;
+      }
+    }
+}

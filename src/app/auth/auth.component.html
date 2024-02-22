@@ -1,0 +1,70 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="image col-md-6">
+        <img class="w-100 rounded-4" height="600" src="assets/images/login.jpg" alt="">
+      </div>
+      <div class="col-md-4">
+        <div class="head py-4">
+          <h2 class="text-center">Welcome to <span>Logo</span></h2>
+          <p *ngIf="erroMessage != ''" class="m-0 p-2 text-danger fw-bolder text-center">{{erroMessage}}</p>
+        </div>
+        <div class="botons mx-auto p-2 rounded-pill d-flex justify-content-around">
+          <button (click)="redirec = 'login'" [ngClass]="redirec == 'login'?'active':''" class="btn px-5 rounded-pill text-white fw-bold">Login</button>
+          <button (click)="redirec= 'register'" [ngClass]="redirec == 'register'?'active':''" class="btn px-5 rounded-pill text-white fw-bold">Register</button>
+        </div>
+        <div *ngIf="redirec == 'login'" class="login">
+          <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laboriosam aspernatur ratione a adipisci ab!</p>
+          <form (ngSubmit)="handleLogin(login)" [formGroup]="login" class="" action="">
+            <div class="form-group mb-4">
+              <label class="mb-2 fw-bold" for="">E_mail</label>
+              <input (input)="erroMessage = ''" formControlName="email" type="text" placeholder="Enter Your E_mail" class="form-control rounded-pill p-2 px-3">
+              <div *ngIf="login.get('email')?.errors && login.get('email')?.touched">
+                <p *ngIf="login.get('email')?.getError('required')" class="m-0 px-2 py-2 text-danger fw-bold">E_mail is Requird </p>
+                <p *ngIf="login.get('email')?.getError('email')" class="m-0 px-2 py-2 text-danger fw-bold"> In Valid E_mail </p>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label class="mb-2 fw-bold" for="">Password</label>
+              <input (input)="erroMessage = ''" formControlName="password" type="password" placeholder="Enter Your Password" class="form-control rounded-pill p-2 px-3">
+                <div *ngIf="login.get('password')?.errors && login.get('password')?.touched">
+                  <p *ngIf="login.get('password')?.getError('required')" class="m-0 px-2 py-2 text-danger fw-bold">Password is Requird </p>
+                </div>
+            </div>
+            <button [disabled]="login.invalid" class="btn active text-white rounded-pill px-5 fs-5 d-block ms-auto">Login</button>
+          </form>
+        </div>
+        <div *ngIf="redirec == 'register'" class="login">
+          <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laboriosam aspernatur ratione a adipisci ab!</p>
+          <form (ngSubmit)="handleRegister(Register)" [formGroup]="Register" class="" action="">
+            <div class="form-group mb-4">
+              <label class="mb-2 fw-bold" for="">E_mail</label>
+              <input (input)="erroMessage = ''" formControlName="email" type="text" placeholder="Enter Your E_mail" class="form-control rounded-pill p-2 px-3">
+              <div *ngIf="Register.get('email')?.errors && Register.get('email')?.touched">
+                <p *ngIf="Register.get('email')?.getError('required')" class="m-0 px-2 py-2 text-danger fw-bold">E_mail is Requird </p>
+                <p *ngIf="Register.get('email')?.getError('email')" class="m-0 px-2 py-2 text-danger fw-bold"> In Valid E_mail </p>
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label class="mb-2 fw-bold" for="">User Name</label>
+              <input (input)="erroMessage = ''" formControlName="userName"  type="text" placeholder="Enter Your User Name" class="form-control rounded-pill p-2 px-3">
+              <div *ngIf="Register.get('userName')?.errors && Register.get('userName')?.touched">
+                <p *ngIf="Register.get('userName')?.getError('required')" class="m-0 px-2 py-2 text-danger fw-bold">user name is Requird</p>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label class="mb-2 fw-bold" for="">Password</label>
+              <input (input)="erroMessage = ''" formControlName="password" type="password" placeholder="Enter Your Password" class="form-control rounded-pill p-2 px-3">
+              <div  *ngIf="Register.get('password')?.errors && Register.get('password')?.touched">
+                <p *ngIf="Register.get('password')?.getError('required')" class="m-0 px-2 py-2 text-danger fw-bold">Password is
+                  Requird</p>
+              </div>
+            </div>
+            <button [disabled]="Register.invalid" class="btn active text-white rounded-pill px-5 fs-5 d-block ms-auto">Register</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

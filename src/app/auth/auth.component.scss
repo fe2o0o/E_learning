@@ -1,0 +1,30 @@
+.botons{
+  background-color: #49bbbd97 ;
+  width: 100%;
+  color: white;
+  border: none;
+}
+
+.active {
+  background-color: #49BBBD;
+  border: none;
+}
+
+.login{
+  form{
+    .form-group{
+      input{
+        border: 2px solid #49BBBD;
+        &:focus{
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:992px) {
+  .image{
+    display: none;
+  }
+}

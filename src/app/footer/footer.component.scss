@@ -1,0 +1,24 @@
+footer{
+  background-color: #252641;
+}
+
+.text-color{
+  color:#B2B3CF;
+}
+
+.form{
+  input{
+    background-color: transparent;
+    border: 2px solid #B2B3CF !important;
+    color: #B2B3CF !important;
+    &:focus{
+      box-shadow: none;
+    }
+    &::placeholder{
+      color: #B2B3CF;
+    }
+  }
+  .btn{
+    background-color: #49BBBD;
+  }
+}

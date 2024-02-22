@@ -1,0 +1,42 @@
+.bg-circle{
+  background-color: #33EFA0;
+}
+
+.head , h2{
+  z-index: 5;
+}
+.circle{
+  width: 50px;
+  height: 50px;
+  top: -10px;
+  left: -10px;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.circle-img1,.circle-img2{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+
+}
+
+.circle-img1{
+  background-color: #23BDEE ;
+  top: -50px;
+  left: -50px;
+
+}
+
+.circle-img2{
+  background-color: #33EFA0;
+  right: -50px;
+  z-index: 1;
+  bottom: 0px;
+}
+
+
